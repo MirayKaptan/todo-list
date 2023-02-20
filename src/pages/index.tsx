@@ -17,9 +17,9 @@ export default function Home() {
         style={{
           background: "linear-gradient(116.82deg, #85A1BA 0%, #194591 65.92%)",
         }}
-        className="h-screen max-w-full justify-items-center"
+        className="h-screen max-w-full "
       >
-        <WesteropsLogo />
+        <WesteropsLogo className="align-middle " />
         <TodoMainPage />
       </main>
     </>

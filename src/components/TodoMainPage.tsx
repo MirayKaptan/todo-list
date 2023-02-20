@@ -2,8 +2,12 @@ import React from "react";
 import PinIcon from "@/assets/PinIcon";
 import ArrowIcon from "@/assets/ArrowIcon";
 import QuoteIcon from "@/assets/QuoteIcon";
+import { useMainPageContext, useModalsContext } from "@/context/context";
+import { ToDo } from 
 
 const TodoMainPage = () => {
+  const { todos } = useMainPageContext();
+
   return (
     <>
       <div
@@ -26,9 +30,10 @@ const TodoMainPage = () => {
             ></span>
           </div>
           <hr />
+          <br />
           <div className="mb-4 mx-4 flex flex-col">
             <div className="flex items-center">
-              <PinIcon />
+              <PinIcon fill="#FF7964" />
               <p
                 style={{
                   color: "rgba(255, 121, 100, 1)",
@@ -43,8 +48,13 @@ const TodoMainPage = () => {
 
             <div className="z-20">
               {/* Pinned List*/}
+              <br />
               <div className="mb-8">WİLLCHANGE</div>
+              {todos?.map((todo: ToDo, index: any) =>
+                todo?.pinned ? <Task key={index} todo={todo} /> : null
+              )}
               <hr />
+              <br />
               {/*Todo List*/}
               <div>WİLLCHANGE</div>
             </div>
