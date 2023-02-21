@@ -19,7 +19,7 @@ export default function Home() {
         }}
         className="h-screen max-w-full "
       >
-        <WesteropsLogo className="align-middle " />
+        <WesteropsLogo className="top-14 absolute left-0 right-0 mx-auto h-5" />
         <TodoMainPage />
       </main>
     </>

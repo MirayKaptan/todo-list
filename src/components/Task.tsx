@@ -12,13 +12,13 @@ type Props = {
 const Task = (props: Props) => {
   const { todo } = props;
 
-  const { setTodoMenuModal, setSelectedTodo } = useModalsContext();
-  const { completeTodo } = useMainPageContext();
+  const { setTodoMenuModal, setSelectedToDo } = useModalsContext();
+  const { completeTask } = useMainPageContext();
 
   return (
     <>
       <div className="flex my-6 items-center">
-        <a onClick={() => completeTodo(todo.id)}>
+        <a onClick={() => completeTask(todo.id)}>
           {todo?.completed ? <CheckedBox /> : <Checkbox />}
         </a>
         <p className="mx-4 h-5 not-italic font-normal text-base leading-5 text-black">
@@ -27,7 +27,7 @@ const Task = (props: Props) => {
         <a
           onClick={() => {
             setTodoMenuModal(true);
-            setSelectedTodo(todo);
+            setSelectedToDo(todo);
           }}
           className="absolute right-4"
         >

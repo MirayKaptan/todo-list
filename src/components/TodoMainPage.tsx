@@ -2,12 +2,8 @@ import React from "react";
 import PinIcon from "@/assets/PinIcon";
 import ArrowIcon from "@/assets/ArrowIcon";
 import QuoteIcon from "@/assets/QuoteIcon";
-import { useMainPageContext, useModalsContext } from "@/context/context";
-import { ToDo } from 
 
 const TodoMainPage = () => {
-  const { todos } = useMainPageContext();
-
   return (
     <>
       <div
@@ -29,7 +25,7 @@ const TodoMainPage = () => {
               className="flex w-40 h-1 mt-4 mx-auto"
             ></span>
           </div>
-          <hr />
+          <hr style={{ marginTop: "-25px" }} />
           <br />
           <div className="mb-4 mx-4 flex flex-col">
             <div className="flex items-center">
@@ -44,24 +40,26 @@ const TodoMainPage = () => {
               </p>
             </div>
 
-            {/* TODO LIST */}
-
             <div className="z-20">
-              {/* Pinned List*/}
               <br />
-              <div className="mb-8">WİLLCHANGE</div>
-              {todos?.map((todo: ToDo, index: any) =>
-                todo?.pinned ? <Task key={index} todo={todo} /> : null
-              )}
+              <div className="mb-8">
+                Wıll be edited
+                {/* {todos?.map((todo: ToDo, index: any) =>
+                  todo?.pinned ? <Task key={index} todo={todo} /> : null
+                )} */}
+              </div>
               <hr />
               <br />
-              {/*Todo List*/}
-              <div>WİLLCHANGE</div>
+
+              <div>
+                will be edited
+                {/* {todos?.map((todo: ToDo, index: any) =>
+                  !todo?.pinned ? <Task key={index} todo={todo} /> : null
+                )} */}
+              </div>
             </div>
           </div>
         </div>
-
-        {/* BUTTON */}
 
         <div
           style={{ bottom: "62px" }}
